@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  /* Phone နဲ့ Network ကနေ ချိတ်ဆက်မှု ခွင့်ပြုရန် */
+  allowedDevOrigins: ["192.168.1.111", "192.168.1.111:3001"],
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
@@ -14,4 +19,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

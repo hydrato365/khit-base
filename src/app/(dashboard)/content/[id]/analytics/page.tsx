@@ -1,0 +1,2 @@
+import { VideoAnalyticsView } from "@/components/dashboard/video-analytics-view";
+export default function Page({ params }: { params: { id: string } }) { return <VideoAnalyticsView videoId="{params.id}"/>; }
